@@ -52,7 +52,9 @@ namespace Praktiline_too_Kino
 
                 this.Width = 920;
                 this.Height = 820;
-                BackColor = Color.WhiteSmoke;
+                this.BackgroundImage = Image.FromFile(@"../../NightSky.jpg");
+                ForeColor = Color.White;
+                BackColor = Color.Black;
 
                 // Отображаем зал
                 SaaliKuvamine();
@@ -63,7 +65,7 @@ namespace Praktiline_too_Kino
                 osta_pilet.Location = new Point(400, 725);
                 osta_pilet.Text = "Osta pilet";
                 osta_pilet.Font = new Font("Bauhaus 93", 12, FontStyle.Bold);
-                osta_pilet.BackColor = Color.Blue;
+                osta_pilet.BackColor = Color.Black;
                 osta_pilet.ForeColor = Color.White;
                 osta_pilet.Click += Osta_pilet_Click;
                 Controls.Add(osta_pilet);
@@ -128,7 +130,7 @@ namespace Praktiline_too_Kino
             // Если место свободное, выполняем действия
             if (clickedButton.Tag.ToString() == "available")
             {
-                clickedButton.BackColor = Color.Red;  // Забронировать место (красное)
+                clickedButton.BackColor = Color.Gray;  // Забронировать место (красное)
                 clickedButton.Tag = "selected";  // Изменяем статус места
                 valitudKohad.Add(clickedButton.Text);  // Добавляем место в список
             }

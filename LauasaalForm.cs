@@ -35,7 +35,9 @@ namespace Praktiline_too_Kino
             this.Height = 541;
             this.Width = 967;
             this.Text = "Saal Form";
-            BackColor = Color.WhiteSmoke;
+            this.BackgroundImage = Image.FromFile(@"../../NightSky.jpg");
+            ForeColor = Color.White;
+            BackColor = Color.Black;
 
             // Label - saal_nimetus_lbl
             saal_nimetus_lbl = new Label();

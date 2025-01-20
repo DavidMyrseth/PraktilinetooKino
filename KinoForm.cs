@@ -23,51 +23,52 @@ namespace Praktiline_too_Kino
         string postersDirectory = Path.Combine(Application.StartupPath, "../../Poster");
         private List<string> valitudKohad;
 
-       
+
         SqlCommand cmd;
         SqlDataReader reader;
         Button btn1, btn2;
         PictureBox pictureBox;
-        Label filmi_nimetus_lbl; 
+        Label filmi_nimetus_lbl;
         List<Image> posters;
         List<string> filmiNimetuss;
         int praegune_indeks;
 
         public KinoForm()
         {
-            this.Height = 675;
+            this.Height = 650;
             this.Width = 440;
-            this.Text = "Tere tulemast kinno!";
-            this.BackgroundImage = Image.FromFile(@"../../REG.jpg");
+            this.Text = "Tere kasutaja";
+            this.BackgroundImage = Image.FromFile(@"../../NightSky.jpg");
             this.BackgroundImageLayout = ImageLayout.Stretch;
-            BackColor = Color.WhiteSmoke;
+            ForeColor = Color.White;
+            BackColor = Color.Black;
 
             btn1 = new Button();
-            btn1.Text = "Kava";
+            btn1.Text = "Järgmine poster";
             btn1.Size = new Size(327, 50);
-            btn1.Location = new Point(35, 500);
+            btn1.Location = new Point(35, 25);
             btn1.Font = new Font("Bauhaus 93", 18, FontStyle.Italic);
             btn1.Click += Btn1_Click;
             Controls.Add(btn1);
             valitudKohad = new List<string>();
             btn2 = new Button();
-            btn2.Text = "Osta pilet";
+            btn2.Text = "Piletit ostes";
             btn2.Size = new Size(327, 50);
-            btn2.Location = new Point(35, 580);
+            btn2.Location = new Point(35, 80);
             btn2.Font = new Font("Bauhaus 93", 18, FontStyle.Italic);
             btn2.Click += Btn2_Click;
             Controls.Add(btn2);
 
 
             pictureBox = new PictureBox();
-            pictureBox.Location = new Point(35, 68);
+            pictureBox.Location = new Point(35, 150);
             pictureBox.Size = new Size(327, 359);
             pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             Controls.Add(pictureBox);
 
             filmi_nimetus_lbl = new Label();
             filmi_nimetus_lbl.Size = new Size(327, 50);
-            filmi_nimetus_lbl.Location = new Point(35, 425);
+            filmi_nimetus_lbl.Location = new Point(35, 500);
             filmi_nimetus_lbl.Font = new Font("Bauhaus 93", 14, FontStyle.Italic);
             filmi_nimetus_lbl.TextAlign = ContentAlignment.MiddleCenter;
             Controls.Add(filmi_nimetus_lbl);
@@ -151,7 +152,7 @@ namespace Praktiline_too_Kino
 
                 pictureBox.Image = posters[praegune_indeks];
                 filmi_nimetus_lbl.Text = filmiNimetuss[praegune_indeks];
-                
+
                 filmiNimetus = filmi_nimetus_lbl.Text;
                 posterPath = Path.Combine(postersDirectory, $"{filmiNimetus}.jpg".Trim().Replace("\n", "").Replace("\r", ""));
 
@@ -224,4 +225,4 @@ namespace Praktiline_too_Kino
             ticketForm.Show();
         }
     }
-} 
+}

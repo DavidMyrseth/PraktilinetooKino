@@ -35,7 +35,9 @@ namespace Praktiline_too_Kino
             this.Height = 541;
             this.Width = 967;
             this.Text = "Kinolaud";
-            BackColor = Color.WhiteSmoke;
+            this.BackgroundImage = Image.FromFile(@"../../NightSky.jpg");
+            ForeColor = Color.White;
+            BackColor = Color.Black;
 
             // Label - filmi_nimetus_lbl
             filmi_nimetus_lbl = new Label();

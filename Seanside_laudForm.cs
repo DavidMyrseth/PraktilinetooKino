@@ -14,7 +14,6 @@ namespace Praktiline_too_Kino
 {
     public partial class Seanside_laudForm : Form
     {
-        //SqlConnection AppContext.conn = new SqlConnection($@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\opilane\source\repos\KinoAB\KinoAB\Kino.mdf;Integrated Security=True");
 
         SqlCommand cmd;
         SqlDataAdapter adapter;
@@ -37,7 +36,9 @@ namespace Praktiline_too_Kino
             this.Height = 541;
             this.Width = 967;
             this.Text = "Seansid";
-            BackColor = Color.WhiteSmoke;
+            this.BackgroundImage = Image.FromFile(@"../../NightSky.jpg");
+            ForeColor = Color.White;
+            BackColor = Color.Black;
 
             // Label - filmi_nimetus_lbl
             filmi_nimetus_lbl = new Label();

@@ -25,10 +25,10 @@ namespace Praktiline_too_Kino
 
         private void ConfigureForm()
         {
-            this.Height = 500;
-            this.Width = 600;
+            this.Height = 300;
+            this.Width = 300;
             this.Text = "Registreerimine";
-            this.BackgroundImage = Image.FromFile(@"../../REG.jpg");
+            this.BackgroundImage = Image.FromFile(@"../../NightSky.jpg");
             this.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
@@ -37,10 +37,11 @@ namespace Praktiline_too_Kino
             btnLogin = new Button
             {
                 Text = "Logi sisse",
-                Size = new Size(200, 52),
-                Location = new Point(200, 300),
+                Size = new Size(185, 50),
+                Location = new Point(40, 180),
                 Font = new Font("Bauhaus 93", 18, FontStyle.Italic),
-                BackColor = Color.WhiteSmoke
+                ForeColor = Color.White,
+                BackColor = Color.Black,
             };
             btnLogin.Click += BtnLogin_Click;
             Controls.Add(btnLogin);
@@ -48,21 +49,23 @@ namespace Praktiline_too_Kino
             lblRole = new Label
             {
                 AutoSize = true,
-                Text = "Rolli",
+                Text = "Kasutajad",
                 Font = new Font("Bauhaus 93", 25, FontStyle.Italic),
-                Location = new Point(250, 140),
-                BackColor = Color.WhiteSmoke
+                Location = new Point(44, 40),
+                ForeColor = Color.White,
+                BackColor = Color.Black,
             };
             Controls.Add(lblRole);
 
             cbRole = new ComboBox
             {
-                Location = new Point(200, 200),
+                Location = new Point(40, 100),
                 Font = new Font("Bauhaus 93", 15),
                 Width = 180,
-                BackColor = Color.WhiteSmoke
+                ForeColor = Color.White,
+                BackColor = Color.Black,
             };
-            cbRole.Items.AddRange(new[] { "Admin", "User" });
+            cbRole.Items.AddRange(new[] { "Admin", "Kasutaja" });
             Controls.Add(cbRole);
         }
 
@@ -78,7 +81,7 @@ namespace Praktiline_too_Kino
                         OpenAdminForm();
                         break;
 
-                    case "User":
+                    case "Kasutaja":
                         OpenUserForm();
                         break;
 

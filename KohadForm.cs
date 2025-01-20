@@ -36,7 +36,9 @@ namespace Praktiline_too_Kino
         {
             this.Text = "Kohad";
             this.Size = new Size(800, 600);
-            BackColor = Color.WhiteSmoke;
+            this.BackgroundImage = Image.FromFile(@"../../NightSky.jpg");
+            ForeColor = Color.White;
+            BackColor = Color.Black;
 
             seansid_lbl = new Label();
             seansid_lbl.Text = "Seansi ID";
