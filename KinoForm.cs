@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -35,8 +35,8 @@ namespace Praktiline_too_Kino
 
         public KinoForm()
         {
-            this.Height = 650;
-            this.Width = 440;
+            this.Height = 600;
+            this.Width = 550;
             this.Text = "Tere kasutaja";
             this.BackgroundImage = Image.FromFile(@"../../NightSky.jpg");
             this.BackgroundImageLayout = ImageLayout.Stretch;
@@ -44,24 +44,23 @@ namespace Praktiline_too_Kino
             BackColor = Color.Black;
 
             btn1 = new Button();
-            btn1.Text = "Järgmine poster";
-            btn1.Size = new Size(327, 50);
-            btn1.Location = new Point(35, 25);
+            btn1.Text = "->";
+            btn1.Size = new Size(85, 360);
+            btn1.Location = new Point(360, 150);
             btn1.Font = new Font("Bauhaus 93", 18, FontStyle.Italic);
             btn1.Click += Btn1_Click;
             Controls.Add(btn1);
             valitudKohad = new List<string>();
             btn2 = new Button();
             btn2.Text = "Piletit ostes";
-            btn2.Size = new Size(327, 50);
-            btn2.Location = new Point(35, 80);
+            btn2.Size = new Size(360, 90);
+            btn2.Location = new Point(80, 60);
             btn2.Font = new Font("Bauhaus 93", 18, FontStyle.Italic);
             btn2.Click += Btn2_Click;
             Controls.Add(btn2);
 
-
             pictureBox = new PictureBox();
-            pictureBox.Location = new Point(35, 150);
+            pictureBox.Location = new Point(45, 150);
             pictureBox.Size = new Size(327, 359);
             pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
             Controls.Add(pictureBox);
