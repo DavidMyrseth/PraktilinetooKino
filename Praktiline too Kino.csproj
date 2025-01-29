@@ -258,8 +258,12 @@
     </Content>
     <Content Include="NightSky.jpg" />
     <Content Include="Poster\49.jpg" />
+    <Content Include="Poster\Ballet.jpg" />
+    <Content Include="Poster\Creator.jpg" />
     <Content Include="Poster\EMA.jpg" />
     <Content Include="Poster\FURY.jpg" />
+    <Content Include="Poster\Moonlight.jpg" />
+    <Content Include="Poster\pilt.jpg" />
     <Content Include="Poster\SOO.jpg" />
     <Content Include="Poster\Tenet.jpg" />
   </ItemGroup>
