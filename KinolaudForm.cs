@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -36,7 +36,7 @@ namespace Praktiline_too_Kino
             this.Width = 967;
             this.Text = "Kinolaud";
             this.BackgroundImage = Image.FromFile(@"../../NightSky.jpg");
-            ForeColor = Color.White;
+            ForeColor = Color.Gray;
             BackColor = Color.Black;
 
             // Label - filmi_nimetus_lbl
@@ -173,6 +173,7 @@ namespace Praktiline_too_Kino
                 ID = Convert.ToInt32(dataGridView.SelectedRows[0].Cells["Id"].Value);
                 if (ID != 0)
                 {
+                    Console.WriteLine("Kustutamine");
                     AppContext.conn.Open();
                     cmd = new SqlCommand("DELETE FROM Kinolaud  WHERE Id=@id", AppContext.conn);
                     cmd.Parameters.AddWithValue("@id", ID);
@@ -280,7 +281,6 @@ namespace Praktiline_too_Kino
                     cmd.Parameters.AddWithValue("@saal", saal_cb.Text);
                     cmd.ExecuteNonQuery();
                     ID = Convert.ToInt32(cmd.ExecuteScalar());
-
                     // Вставляем новые данные в базу данных
                     cmd = new SqlCommand("INSERT INTO Kinolaud (Filmi_nimetus, Aasta, Poster, Saal_Id) VALUES (@filmi_nimetus, @aasta, @poster, @saal)", AppContext.conn);
                     cmd.Parameters.AddWithValue("@filmi_nimetus", filmi_nimetus_txt.Text);
@@ -316,12 +316,16 @@ namespace Praktiline_too_Kino
             aasta_txt.Text = dataGridView.Rows[e.RowIndex].Cells["Aasta"].Value.ToString();
             try
             {
+                Console.WriteLine(dataGridView.Rows[e.RowIndex].Cells["Poster"].Value.ToString());
+                string imageName = dataGridView.Rows[e.RowIndex].Cells["Poster"].Value.ToString();
+                imageName = imageName.Replace(".jpg", "");
                 poster_pb.Image = Image.FromFile(Path.Combine(Path.GetFullPath(@"..\..\Poster"),
-                    dataGridView.Rows[e.RowIndex].Cells["Poster"].Value.ToString()));
+                    imageName+".jpg"));
                 poster_pb.SizeMode = PictureBoxSizeMode.Zoom;
             }
-            catch (Exception)
+            catch (Exception er)
             {
+                Console.WriteLine(er);
                 poster_pb.Image = Image.FromFile(Path.Combine(Path.GetFullPath(@"..\..\Poster"), "pilt.jpg"));
             }
         }
